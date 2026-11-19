@@ -1,5 +1,7 @@
 Proyecto Docker CI
+
 Descripción
+
 Proyecto desarrollado para el curso de Integración Continua.
 
 La aplicación consiste en una API desarrollada con Flask que se comunica con una base de datos PostgreSQL mediante Docker Compose.
