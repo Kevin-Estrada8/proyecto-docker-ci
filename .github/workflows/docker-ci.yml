@@ -1,0 +1,31 @@
+name: Docker CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  docker-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar codigo
+        uses: actions/checkout@v4
+
+      - name: Construir contenedores
+        run: docker compose build
+
+      - name: Levantar contenedores
+        run: docker compose up -d
+
+      - name: Esperar arranque
+        run: sleep 15
+
+      - name: Verificar aplicacion
+        run: |
+          curl http://localhost:5000 | grep "Conexion exitosa"
+
+      - name: Apagar contenedores
+        if: always()
+        run: docker compose down
