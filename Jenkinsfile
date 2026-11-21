@@ -11,13 +11,13 @@ pipeline {
 
         stage('Verificar Docker') {
             steps {
-                bat 'docker --version'
+                bat '"C:\\Users\\Kandres Estrada.KANDRES-ESTRADA\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" --version'
             }
         }
 
         stage('Verificar Docker Compose') {
             steps {
-                bat 'docker compose version'
+                bat '"C:\\Users\\Kandres Estrada.KANDRES-ESTRADA\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" compose version'
             }
         }
 
