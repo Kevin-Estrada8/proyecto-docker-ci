@@ -3,15 +3,21 @@ pipeline {
 
     stages {
 
-        stage('Docker Version') {
+        stage('Verificar Git') {
+            steps {
+                bat 'git --version'
+            }
+        }
+
+        stage('Verificar Docker') {
             steps {
                 bat '"C:\\Users\\Kandres Estrada.KANDRES-ESTRADA\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" --version'
             }
         }
 
-        stage('Docker Help') {
+        stage('Verificar Docker Compose') {
             steps {
-                bat '"C:\\Users\\Kandres Estrada.KANDRES-ESTRADA\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" --help'
+                bat '"C:\\Users\\Kandres Estrada.KANDRES-ESTRADA\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker-compose.exe" version'
             }
         }
 
