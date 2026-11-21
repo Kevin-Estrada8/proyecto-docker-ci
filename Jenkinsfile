@@ -11,13 +11,25 @@ pipeline {
 
         stage('Verificar Archivos') {
             steps {
-                sh 'ls -la'
+                bat 'dir'
+            }
+        }
+
+        stage('Verificar Git') {
+            steps {
+                bat 'git --version'
+            }
+        }
+
+        stage('Verificar Docker') {
+            steps {
+                bat 'docker --version'
             }
         }
 
         stage('Verificar Docker Compose') {
             steps {
-                sh 'cat docker-compose.yml'
+                bat 'docker compose version'
             }
         }
 
