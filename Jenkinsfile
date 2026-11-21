@@ -3,18 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clonar Proyecto') {
-            steps {
-                echo 'Repositorio obtenido desde GitHub'
-            }
-        }
-
-        stage('Verificar Archivos') {
-            steps {
-                bat 'dir'
-            }
-        }
-
         stage('Verificar Git') {
             steps {
                 bat 'git --version'
